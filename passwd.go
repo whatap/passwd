@@ -49,7 +49,7 @@ func ParseReader(r io.Reader) (map[string]Entry, error) {
 		}
 		name, entry, err := parseLine(string(copyBytes(line)))
 		if err != nil {
-			return nil, err
+			continue
 		}
 		entries[name] = entry
 	}
